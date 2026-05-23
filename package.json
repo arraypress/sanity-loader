@@ -1,0 +1,40 @@
+{
+  "name": "@arraypress/sanity-loader",
+  "version": "1.0.0",
+  "description": "Astro Content Layer loader for Sanity — plug GROQ queries into defineCollection() with zero glue code.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test tests/sanity-loader.test.js"
+  },
+  "keywords": [
+    "astro",
+    "astro-loader",
+    "content-layer",
+    "sanity",
+    "sanity-io",
+    "groq",
+    "cms",
+    "withastro"
+  ],
+  "author": "David Sherlock",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arraypress/sanity-loader.git"
+  },
+  "peerDependencies": {
+    "@sanity/client": "^6.0.0 || ^7.0.0",
+    "astro": "^5.0.0 || ^6.0.0"
+  }
+}
