@@ -1,6 +1,6 @@
 {
   "name": "@arraypress/sanity-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Astro Content Layer loader for Sanity — plug GROQ queries into defineCollection() with zero glue code.",
   "type": "module",
   "main": "src/index.js",
@@ -35,6 +35,6 @@
   },
   "peerDependencies": {
     "@sanity/client": "^6.0.0 || ^7.0.0",
-    "astro": "^5.0.0 || ^6.0.0"
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
   }
 }
