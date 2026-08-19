@@ -1,4 +1,4 @@
-# @arraypress/sanity-loader
+# @arraypress/sanity-loader-astro
 
 > Astro Content Layer loader for Sanity. Plug a GROQ query into
 > `defineCollection({ loader: sanityLoader({ type: 'product' }) })`
@@ -11,7 +11,7 @@ working unchanged.
 ## Install
 
 ```bash
-npm install --save-dev @arraypress/sanity-loader @sanity/client
+npm install --save-dev @arraypress/sanity-loader-astro @sanity/client
 ```
 
 `@sanity/client` is a peer dep — install it alongside.
@@ -44,7 +44,7 @@ sanityLoader({
 ```ts
 // src/content.config.ts
 import { defineCollection, z } from 'astro:content';
-import { sanityLoader } from '@arraypress/sanity-loader';
+import { sanityLoader } from '@arraypress/sanity-loader-astro';
 
 const products = defineCollection({
   loader: sanityLoader({ type: 'product' }),
@@ -122,7 +122,7 @@ Pass a pre-built client (or stub) when you want to drive the loader
 from a test without env vars or a network:
 
 ```ts
-import { sanityLoader } from '@arraypress/sanity-loader';
+import { sanityLoader } from '@arraypress/sanity-loader-astro';
 
 const stub = { fetch: async () => [{ _id: 'a', slug: { current: 'a' }, title: 'A' }] };
 const loader = sanityLoader({ type: 'product', client: stub });

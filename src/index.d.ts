@@ -1,5 +1,5 @@
 /**
- * @arraypress/sanity-loader — TypeScript definitions.
+ * @arraypress/sanity-loader-astro — TypeScript definitions.
  */
 import type { Loader } from 'astro/loaders';
 import type { SanityClient } from '@sanity/client';

@@ -1,5 +1,5 @@
 /**
- * @arraypress/sanity-loader
+ * @arraypress/sanity-loader-astro
  *
  * Astro Content Layer loader for Sanity. Plug a GROQ query into
  * `defineCollection({ loader: sanityLoader({ type: 'product' }) })`
@@ -15,7 +15,7 @@
  * ```ts
  * // src/content.config.ts
  * import { defineCollection, z } from 'astro:content';
- * import { sanityLoader } from '@arraypress/sanity-loader';
+ * import { sanityLoader } from '@arraypress/sanity-loader-astro';
  *
  * const products = defineCollection({
  *   loader: sanityLoader({ type: 'product' }),
@@ -50,7 +50,7 @@
  *     (flatten nested references, coerce types).
  *   - `idField` — dotted path to the entry id. Default: `slug.current`.
  *
- * @module @arraypress/sanity-loader
+ * @module @arraypress/sanity-loader-astro
  */
 
 /**
@@ -82,7 +82,7 @@ async function getClient(opts) {
 
   if (!projectId) {
     throw new Error(
-      '[@arraypress/sanity-loader] No projectId — set SANITY_PROJECT_ID in your env ' +
+      '[@arraypress/sanity-loader-astro] No projectId — set SANITY_PROJECT_ID in your env ' +
         'or pass `projectId` to sanityLoader().',
     );
   }
@@ -100,7 +100,7 @@ async function getClient(opts) {
     ({ createClient } = await import('@sanity/client'));
   } catch (err) {
     throw new Error(
-      '[@arraypress/sanity-loader] Could not load `@sanity/client`. Install it as a ' +
+      '[@arraypress/sanity-loader-astro] Could not load `@sanity/client`. Install it as a ' +
         'dependency (`npm install @sanity/client`) or pass `opts.client` directly.',
       { cause: err },
     );
@@ -143,10 +143,10 @@ function readPath(obj, path) {
  */
 export function sanityLoader(opts) {
   if (!opts || typeof opts !== 'object') {
-    throw new TypeError('[@arraypress/sanity-loader] options object is required');
+    throw new TypeError('[@arraypress/sanity-loader-astro] options object is required');
   }
   if (!opts.type || typeof opts.type !== 'string') {
-    throw new TypeError('[@arraypress/sanity-loader] `type` is required');
+    throw new TypeError('[@arraypress/sanity-loader-astro] `type` is required');
   }
 
   const {
